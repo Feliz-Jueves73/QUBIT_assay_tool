@@ -11,12 +11,11 @@ cat("The equation of the line is: y =", m, "* x +", b, "\n")
 plot(x, y, main = "Linear Regression", xlab = "x", ylab = "y", pch = 16)
 abline(model, col = "cyan")
 #Calulate the CONCENTRATION of the sample in ng/uL
-  # A is your QUBIT reading for your sample, dil is the dilution factor used
-  # to lower sample to 10 ng/uL (nanodrop reading) as a fraction
+  # A is your QUBIT reading for your sample, dil is the volume of sample used to 
+  # make a 200 uL, 10 ng/uL dilution (based on nanodrop reading) in uL.
 
 A <- 24851
-dil = 6.25/200
+dil <- 6.25
 
-j <- (A-b)/m/100
-conc <- 0.5*j*(dil)^-1
+conc <- (A-b)/m/dil
 cat("your sample is", conc, "ng/uL.")
