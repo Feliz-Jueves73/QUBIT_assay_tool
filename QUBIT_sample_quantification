@@ -8,7 +8,7 @@ model <- lm(y ~ x)
 b <- coef(model)[1]
 m <- coef(model)[2]
 cat("The equation of the line is: y =", m, "* x +", b, "\n")
-plot(x, y, main = "Linear Regression", xlab = "x", ylab = "y", pch = 16)
+plot(x, y, main = "Standard Curve", xlab = "x", ylab = "y", pch = 16)
 abline(model, col = "cyan")
 #Calulate the CONCENTRATION of the sample in ng/uL
   # A is your QUBIT reading for your sample, dil is the volume of sample used to 
